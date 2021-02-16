@@ -16,7 +16,7 @@
 /* Begin PBXFileReference section */
 		1FCBF4DD25DBB9A00051034E /* D&T.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "D&T.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FCBF4E025DBB9A00051034E /* D_TApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = D_TApp.swift; sourceTree = "<group>"; };
-		1FCBF4E225DBB9A00051034E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		1FCBF4E225DBB9A00051034E /* ContentView.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1FCBF4E425DBB9A00051034E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1FCBF4E725DBB9A00051034E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1FCBF4E925DBB9A00051034E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
