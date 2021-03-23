@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F5F30082609F9FF00D4B1B5 /* SubMenuMarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5F30072609F9FF00D4B1B5 /* SubMenuMarkView.swift */; };
 		1FCBF4E125DBB9A00051034E /* D_TApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCBF4E025DBB9A00051034E /* D_TApp.swift */; };
 		1FCBF4E325DBB9A00051034E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCBF4E225DBB9A00051034E /* ContentView.swift */; };
 		1FCBF4E525DBB9A00051034E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FCBF4E425DBB9A00051034E /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F5F30072609F9FF00D4B1B5 /* SubMenuMarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubMenuMarkView.swift; sourceTree = "<group>"; };
 		1FCBF4DD25DBB9A00051034E /* D&T.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "D&T.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FCBF4E025DBB9A00051034E /* D_TApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = D_TApp.swift; sourceTree = "<group>"; };
 		1FCBF4E225DBB9A00051034E /* ContentView.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -53,9 +55,10 @@
 			isa = PBXGroup;
 			children = (
 				1FCBF4E025DBB9A00051034E /* D_TApp.swift */,
-				1FCBF4E225DBB9A00051034E /* ContentView.swift */,
-				1FCBF4E425DBB9A00051034E /* Assets.xcassets */,
 				1FCBF4E925DBB9A00051034E /* Info.plist */,
+				1FCBF4E225DBB9A00051034E /* ContentView.swift */,
+				1F5F30072609F9FF00D4B1B5 /* SubMenuMarkView.swift */,
+				1FCBF4E425DBB9A00051034E /* Assets.xcassets */,
 				1FCBF4E625DBB9A00051034E /* Preview Content */,
 			);
 			path = "D&T";
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1FCBF4E325DBB9A00051034E /* ContentView.swift in Sources */,
+				1F5F30082609F9FF00D4B1B5 /* SubMenuMarkView.swift in Sources */,
 				1FCBF4E125DBB9A00051034E /* D_TApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

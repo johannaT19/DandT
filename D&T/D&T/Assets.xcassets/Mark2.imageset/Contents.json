@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Capture d’écran 2021-02-16 à 15.37.51.png",
+      "filename" : "GAP.svg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "GAP-1.svg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "GAP-2.svg",
       "idiom" : "universal",
       "scale" : "3x"
     }
