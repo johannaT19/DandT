@@ -2,16 +2,17 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-       Home()
+        Home()
     }
 }
-
+class ReponseModel: Codable, Identifiable {
+    var name: String? = ""
+}
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }
 }
-
 
 //
 //
@@ -22,6 +23,7 @@ struct Home : View {
     
     @State var show = false
     @State var searchText = ""
+    @State var models: [ReponseModel] = []
     
     var body: some View {
         
@@ -85,75 +87,47 @@ struct Home : View {
                     .clipShape(RoundedRectangle(cornerRadius: 20))
                     .padding()
                     
-                    // MARK CHOICE
-                    ScrollView{
-                        VStack{
-                            HStack{
-                                Spacer()
-                                Button(action: {
-                                }) {
-                                    Image("Mark1")
-                                        .renderingMode(.original)
-                                        .resizable()
-                                        .frame(width: 130, height: 130)
-                                        .cornerRadius(5)
-                                }
-                                Spacer()
+                    //CHOICE MARK
+                    VStack{
+                        LazyVGrid(columns: Array(repeating: GridItem(.flexible(),spacing: 20), count: 2), spacing: 25){
+                            ForEach (self.models) { (model) in
                                 Button(action: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/{}/*@END_MENU_TOKEN@*/) {
-                                    Image("Mark2")
-                                        .renderingMode(.original)
-                                        .resizable()
+                                    Text(model.name ?? "")
                                         .frame(width: 130, height: 130)
                                         .cornerRadius(5)
                                 }
-                                Spacer()
                             }
-                            .padding(.top,30)
-                            
-                            HStack{
-                                Spacer()
-                                Button(action: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/{}/*@END_MENU_TOKEN@*/) {
-                                    Image("Mark3")
-                                        .renderingMode(.original)
-                                        .resizable()
-                                        .frame(width: 130, height: 130)
-                                        .cornerRadius(5)
-                                }
-                                Spacer()
-                                Button(action: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/{}/*@END_MENU_TOKEN@*/) {
-                                    Image("Mark4")
-                                        .renderingMode(.original)
-                                        .resizable()
-                                        .frame(width: 130, height: 130)
-                                        .cornerRadius(5)
-                                }
-                                Spacer()
-                            }
-                            .padding(.top,25)
-                            
-                            HStack{
-                                Spacer()
-                                Button(action: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/{}/*@END_MENU_TOKEN@*/) {
-                                    Image("Mark5")
-                                        .renderingMode(.original)
-                                        .resizable()
-                                        .frame(width: 130, height: 130)
-                                        .cornerRadius(5)
-                                }
-                                Spacer()
-                                Button(action: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/{}/*@END_MENU_TOKEN@*/) {
-                                    Image("Mark6")
-                                        .renderingMode(.original)
-                                        .resizable()
-                                        .frame(width: 130, height: 130)
-                                        .cornerRadius(5)
-                                }
-                                Spacer()
-                            }
-                            .padding(.top,25)
+                            Spacer()
                         }
-                    }
-                   
+                    }.onAppear(
+                        //DATA
+                        perform: {
+                        
+                        guard let url: URL = URL(string: "http://192.168.64.2/Dress&Try/") else {
+                            print("invalid URL")
+                            return
+                        }
+                        
+                        var urlRequest: URLRequest = URLRequest(url: url)
+                        urlRequest.httpMethod = "GET"
+                        URLSession.shared.dataTask(with: urlRequest, completionHandler: {
+                            (data, reponse, error) in
+                            
+                            guard let data = data else {
+                                print("invalid reponse")
+                                return
+                            }
+                            
+                            do{
+                                self.models = try
+                                    JSONDecoder().decode([ReponseModel].self, from: data)
+                            }catch{
+                                print(error.localizedDescription)
+                            }
+                            
+                        }).resume()
+                        
+                    })
                 }
             }
             
@@ -309,3 +283,4 @@ struct Menu : View {
         
     }
 }
+
